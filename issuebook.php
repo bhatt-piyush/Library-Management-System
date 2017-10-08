@@ -94,7 +94,7 @@ include ("inc/navbar.php");?>
 				$urlview="member-record.php?id=$memid";
 				?>
 			
-			<input type="button" class="btn btn-info" value="Go to Member Record" onclick="location.href = '<?php echo $urlview?>';">
+			<input type="button" class="btn btn-info" value="Go to Member Record" onclick="location.href = '<?php echo $urlview?>';" >
 			
 			<!-- ***********Edit your content ENDS here******** -->	
 			</div> <!--body panel main -->

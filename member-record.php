@@ -36,6 +36,13 @@ include ("inc/navbar.php");?>
 						
 				<?php
 				$id=$_GET['id'];
+				if($id == "")
+				{
+					echo "No member id provided <br>";
+					echo "Redirecting to homepage in 5 secs...... <br><br><br>";
+					?><meta http-equiv="refresh" content="5;URL=index.php" />
+					<?php
+				}
 				//Create SQL query
 
 				$query="select *
@@ -92,7 +99,7 @@ include ("inc/navbar.php");?>
 					  //display a message
 				if(mysqli_num_rows($qr)==0)
 				{
-					echo ("Sorry, seems that book is not available in any of the libraries...<br>");
+					echo ("Sorry, seems that no book is issued...<br>");
 				}//end no record
 				else
 				{//there is/are record(s)
