@@ -35,7 +35,7 @@ include ("inc/navbar.php");?>
 				Issue Book<br>
 				<form role="form" name="" action="" method="GET">
 					<div class="form-group">
-					  Member ID <input class="form-control" name="empno" type="text" maxlength="6" 
+					  Member ID <input class="form-control" name="empno" type="text"
 					  placeholder ="Enter member ID" required>
 					  Book ID <input class="form-control" name="book" type="text" 
 					  value = "<?php echo $_GET['book']?>" readonly>

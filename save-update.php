@@ -4,7 +4,7 @@ include ("inc/dbconn.php");?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>FSTM.kuis.edu.my - PHP - MySQL</title>
+  <title>Update Status</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -29,40 +29,33 @@ include ("inc/navbar.php");?>
     <div class="col-md-9" name="maincontent" id="maincontent">
 		
 		<div id="exercise" name="exercise" class="panel panel-info">
-		<div class="panel-heading"><h5>UPDATE existing staff</h5></div>
+		<div class="panel-heading"><h5>Update existing member</h5></div>
 			<div class="panel-body">
 			<!-- ***********Edit your content STARTS from here******** -->
-			<?php
-
-			//perform UPDATE
-			//Create SQL query
-			$empno=$_GET['empno'];
-			$firstname=$_GET['firstname'];
-			$lastname=$_GET['lastname'];
-			$workdept=$_GET['workdept'];
-			$phoneno=$_GET['phoneno'];
 			
-			//SQL to update record
-			$query="UPDATE employee SET 
-			   FIRSTNAME='$firstname', 
-			   LASTNAME='$lastname', 
-			   WORKDEPT='$workdept', 
-			   PHONENO='$phoneno' 
-			   where EMPNO='$empno'";
-			   //echo $query;
-			   
-			//Execute the query
-			$qr=mysqli_query($db,$query);
-			if($qr==false){
-				echo ("Query cannot be executed!<br>");
-				echo ("SQL Error : ".mysqli_error($db));
-			}
-			else{//insert successfull
-				echo "UPDATE has been saved...<br>";
-				echo "<a href='php-db-template.php?staffname=$firstname'>View $firstname $lastname</a>";
-			}
-
-			?>
+			
+			<?php
+					$id = $_GET['memid'];
+					$firstname=$_GET['firstname'];
+					$lastname=$_GET['lastname'];
+					$address=$_GET['address'];
+					$phoneno=$_GET['phoneno'];
+					$query="UPDATE members SET FName = '$firstname', LName = '$lastname', Address = '$address', Phone = '$phoneno' 
+					where StudentId = '$id'";
+					//Execute the query
+					$qr=mysqli_query($db,$query);
+					if($qr==false){
+						echo ("Query cannot be executed!<br>");
+						echo ("SQL Error : ".mysqli_error($db));
+					}
+					else{//insert successfull
+						echo "UPDATE has been saved...<br>";
+						echo "<a href='member-record.php?id=$id'>View $firstname $lastname</a>";
+					}
+				
+				?>
+			
+		
 						
 				
 			

@@ -11,5 +11,9 @@
 					<span class="fui-plus"></span></a>
 				<a href="insert-book.php" class="btn btn-info btn-block">Insert New Book
 					<span class="fui-plus"></span></a>
+				<a href="update-delete-member.php" class="btn btn-danger btn-block">Update/Delete Member 
+					<span class="fui-plus"></span></a>
+				<a href="search-update-delete.php" class="btn btn-danger btn-block">Update/Delete Staff 
+					<span class="fui-plus"></span></a>
 			</div>
 		</div>

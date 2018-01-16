@@ -4,7 +4,7 @@ include ("inc/dbconn.php");?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>FSTM.kuis.edu.my - PHP - MySQL</title>
+  <title>Update Member Info</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -29,15 +29,15 @@ include ("inc/navbar.php");?>
     <div class="col-md-9" name="maincontent" id="maincontent">
 		
 		<div id="exercise" name="exercise" class="panel panel-info">
-		<div class="panel-heading"><h5>UPDATE existing staff</h5></div>
+		<div class="panel-heading"><h5>UPDATE existing member</h5></div>
 			<div class="panel-body">
 			<!-- ***********Edit your content STARTS from here******** -->
 			<?php
 				//fetch old record to display in form
 				$id=$_GET['id'];
 				//sql to fetch selected staff
-				$sql="select * from employee 
-					where EMPNO='$id'";
+				$sql="select * from members 
+					where StudentId='$id'";
 					//echo $sql;
 				$rs=mysqli_query($db,$sql);
 				//check sql command
@@ -52,18 +52,18 @@ include ("inc/navbar.php");?>
 				Update Existing Staff Record<br>
 				<form role="form" name="" action="save-update.php" method="GET">
 					<div class="form-group">
-					  Staff ID <input class="form-control" name="empno" 
+					  Member ID <input class="form-control" name="memid" 
 					  type="text" maxlength="6" 
-					  value="<?php echo $rekod['EMPNO']?>" readonly>
+					  value="<?php echo $rekod['StudentId']?>" readonly>
 					  Firstname <input class="form-control" name="firstname" type="text" 
-					  value ="<?php echo $rekod['FIRSTNAME']?>" >
+					  value ="<?php echo $rekod['FName']?>" required>
 					  Lastname <input class="form-control" name="lastname" type="text" 
-					  value ="<?php echo $rekod['LASTNAME']?>" >
-					  Department 
-					  <input class="form-control" name="workdept" type="text" 
-					  value ="<?php echo $rekod['WORKDEPT']?>" >
-					  Phone <input class="form-control" name="phoneno" type="text" maxlength="4" 
-					  value="<?php echo $rekod['PHONENO']?>" >
+					  value ="<?php echo $rekod['LName']?>" >
+					  Address
+					  <input class="form-control" name="address" type="text" 
+					  value ="<?php echo $rekod['Address']?>" required>
+					  Phone <input class="form-control" name="phoneno" type="text" maxlength="14" 
+					  value="<?php echo $rekod['Phone']?>" required>
 					  
 					  <input class="btn btn-embosed btn-primary" type="submit" value="Save UPDATE" >
 					</div>
